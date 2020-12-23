@@ -1,0 +1,130 @@
+.app {
+  background: url(../../img/bg-movie.jpg);
+  background-size: auto auto;
+  padding: 100px 0;
+  
+
+  .app__container {
+    max-width: 940px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    overflow: hidden;
+
+    .app__left {
+      margin-bottom: 40px;
+      h2 {
+        color: #fff;
+        font-weight: 800;
+        line-height: 50px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .app__left__content {
+        color: #fff;
+        font-weight: 15px;
+        font-weight: 600;
+        padding: 20px 0;
+      }
+
+      .app__left__btn {
+        background-color: #fb4226;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: medium;
+        font-weight: 700;
+        border: none;
+        border-radius: 4px;
+      }
+
+      .app__left__version {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 0;
+
+        a {
+          text-decoration: underline;
+          color: #fff;
+        }
+      }
+    }
+    .app__right {
+      position: relative;
+      text-align: center;
+      .app__slider__img {
+        .phone-img {
+          width: 200px;
+        }
+      }
+      .app__slider__container {
+        position: absolute !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 190px;
+        border-radius: 20px;
+        overflow: hidden;
+        .img-slider {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+
+.app {
+  @include responsive("large") {
+    .app__container {
+      grid-template-columns: 1fr;
+
+      .app__left {
+        text-align: center;
+      }
+
+      .app__right {
+        .app__slider__img {
+          .phone-img {
+            width: 300px;
+          }
+        }
+        .app__slider__container {
+          width: 290px;
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+  @include responsive("medium") {
+    .app__container {
+      grid-template-columns: 1fr;
+
+      .app__left {
+        text-align: center;
+
+        h2 {
+          padding: 0 20px;
+        }
+        .app__left__content {
+          padding: 20px;
+        }
+      }
+
+      .app__right {
+        .app__slider__img {
+          .phone-img {
+            width: 200px;
+          }
+        }
+        .app__slider__container {
+          width: 190px;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+//Helper
+@import './Helper/variables';
+@import './Helper/mixin';
+
+//Bases
+@import './Base/reset';
+@import './Base/customize';
+
+//Components
+
+//Layouts
+@import './Layout/header';
+@import './Layout/movies';
+@import './Layout/stickets';
+@import './Layout/news';
+@import './Layout/app';
+@import './Layout/footer';
+@import './Layout/slidebar';

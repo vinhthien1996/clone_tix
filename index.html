@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/magnific-popup.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/slick.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+            <div class="header__left">
+                <img src="./img/web-logo.png" />
+            </div>
+            <div class="header__center">
+                <ul>
+                    <li><a href="#">Lịch Chiếu</a></li>
+                    <li><a href="#">Cụm Rạp</a></li>
+                    <li><a href="#">Tin Tức</a></li>
+                    <li><a href="#">Ứng Dụng</a></li>
+                </ul>
+            </div>
+            <div class="header__right">
+                <div class="header__right__login">
+                    <a href="#" class="text-decoration-none"><img src="./img/avatar.png" /> Đăng Nhập</a>
+                </div>
+                <div class="header__right__location">
+                    <i class="fa fa-map-marker-alt"></i> Hồ Chí Minh
+                </div>
+            </div>
+            <div class="header__slider">
+                <div id="sidebar-menu-open">
+                    <img src="./img/menu-options.png" />
+                </div>
+            </div>
+        </div>
+        <div class="mCarousel">
+            <div class="mCarousel__container">
+                <div class="mCarousel__item">
+                    <div class="mCarousel__overlay"></div>
+                    <a href="#">
+                        <img src="./img/carousel2.png">
+                    </a>
+                </div>
+                <div class="mCarousel__item">
+                    <div class="mCarousel__overlay"></div>
+                    <a href="#">
+                        <img src="./img/carousel4.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="booking">
+                <div class="booking__container">
+                    <div class="booking__film">
+                        <button class="booking__btn" id="btnPhim">Phim</button>
+                        <ul class="booking__dropdown" id="vPhim">
+                            <li><a href="#">Tiệc Trăng Máu - Blood Moon Party</a></li>
+                            <li><a href="#">Phù Thủy, Phù Thủy - The Witches (P)</a></li>
+                            <li><a href="#">Phù Thủy Học Đường - The Craft: Legacy (C16)</a></li>
+                            <li><a href="#">Sài Gòn Trong Cơn Mưa - Saigon In The Rain (C16)</a></li>
+                            <li><a href="#">Kỳ Nghỉ Nhớ Đời - Golden Holiday (C16)</a></li>
+                            <li><a href="#">Ngạ Quỷ: Tiếng Thét Đồng Gió Hú - The Ghoul: Horror At The Howling Field
+                                    (C18)</a></li>
+                        </ul>
+                    </div>
+                    <div class="booking__rap">
+                        <button class="booking__btn" id="btnRap">Rạp</button>
+                        <ul class=" booking__dropdown" id="vRap">
+                            <li><a>Vui lòng chọn phim</a></li>
+                        </ul>
+                    </div>
+                    <div class="booking__ngayxem">
+                        <button class="booking__btn" id="btnNgay">
+                            Ngày xem
+                        </button>
+                        <ul class="booking__dropdown" id="vNgay">
+                            <li><a>Vui lòng chọn phim và rạp</a></li>
+                        </ul>
+                    </div>
+                    <div class="booking__suatchieu">
+                        <button class="booking__btn" id="btnChieu">Suất chiếu</button>
+                        <ul class="booking__dropdown" id="vChieu">
+                            <li><a>Vui lòng chọn phim, rạp và ngày xem</a></li>
+                        </ul>
+                    </div>
+                    <div class="booking__buy">
+                        <button class="booking__btn__buy text-white m-0" type="button" data-toggle="dropdown">
+                            MUA VÉ NGAY
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SLIDER MENU -->
+    <div id="menu-screen"></div>
+    <div id="navMenu">
+        <div id="sidebar-menu-close">
+            <img src="./img/next.png" />
+        </div>
+        <div class="navMenu__wrap">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="./img/avatar.png" />
+                        <span>Đăng Nhập</span>
+                    </a>
+                </li>
+                <li><a href="#">Lịch chiếu</a></li>
+                <li><a href="#">Cụm rạp</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Ứng dụng</a></li>
+                <li><a href="#">Hồ Chí Minh</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="movies">
+        <div class="movies__container">
+            <div class="movies__phone">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-dang-chieu2-tab" data-toggle="tab"
+                            href="#nav-dang-chieu2" role="tab" aria-controls="nav-dang-chieu2" aria-selected="true">Đang
+                            Chiếu</a>
+                        <a class="nav-item nav-link" id="nav-dang-chieu2-tab" data-toggle="tab" href="#nav-dang-chieu2"
+                            role="tab" aria-controls="nav-dang-chieu2" aria-selected="true">Sắp Chiếu</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-dang-chieu2" role="tabpanel"
+                        aria-labelledby="nav-dang-chieu2-tab">
+                        <div class="movies__responsive">
+                            <div class="col-xs-12 mx-2 my-3 movies__responsive__item">
+                                <img src="./img/res1.png" class="img__responsive" />
+                                <div class="movies__responsive__rate">
+                                    <h3>9.2</h3>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <span>½</span>
+                                </div>
+                                <span class="movies__responsive__label">C18</span>
+                            </div>
+                            <div class="col-xs-12 mx-2 my-3 movies__responsive__item">
+                                <img src="./img/res2.png" class="img__responsive" />
+                                <div class="movies__responsive__rate">
+                                    <h3>8.2</h3>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <span>½</span>
+                                </div>
+                                <span class="movies__responsive__label mGreen">P</span>
+                            </div>
+                            <div class="col-xs-12 mx-2 my-4 movies__responsive__item">
+                                <img src="./img/res3.png" class="img__responsive" />
+                                <div class="movies__responsive__rate">
+                                    <h3>6.5</h3>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <span>½</span>
+                                </div>
+                                <span class="movies__responsive__label">C18</span>
+                                <div class="movies__responsive__lb">
+                                    <img src="./img/film_type_2.png" />
+                                </div>
+                                <div class="movies__responsive__bottom">
+                                    Suất Chiếu Sớm
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news__btn">
+                        <button>XEM THÊM</button>
+                    </div>
+                </div>
+            </div>
+            <div class="movies__pc">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-dang-chieu-tab" data-toggle="tab"
+                            href="#nav-dang-chieu" role="tab" aria-controls="nav-dang-chieu" aria-selected="true">Đang
+                            Chiếu</a>
+                        <a class="nav-item nav-link" id="nav-dang-chieu-tab" data-toggle="tab" href="#nav-dang-chieu"
+                            role="tab" aria-controls="nav-dang-chieu" aria-selected="true">Sắp Chiếu</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-dang-chieu" role="tabpanel"
+                        aria-labelledby="nav-dang-chieu-tab">
+                        <div class="movies_list">
+                            <div class="movies_list__container">
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m1.png" />
+                                        <div class="movies__rate">
+                                            <h3>9.2</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C18</span> Tiệc Trăng Máu - Blood Moon Party
+                                        </div>
+                                        <p>100 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m2.png" />
+                                        <div class="movies__rate">
+                                            <h3>7.9</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span class="spanGreen">P</span> Phù Thủy, Phù Thủy - The Witches (P)
+                                        </div>
+                                        <p>106 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m3.png" />
+                                        <div class="movies__rate">
+                                            <h3>6.8</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C16</span> Phù Thủy Học Đường - The Craft: Legacy (C16)
+                                        </div>
+                                        <p>94 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m4.png" />
+                                        <div class="movies__rate">
+                                            <h3>6.5</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                        <div class="movies__label">
+                                            <img src="./img/film_type_2.png" />
+                                        </div>
+                                        <div class="movies__label__bottom">
+                                            Suất Chiếu Sớm
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C18</span> Chồng Người Ta (C18)
+                                        </div>
+                                        <p>90 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m5.png" />
+                                        <div class="movies__rate">
+                                            <h3>5.5</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                        <div class="movies__label">
+                                            <img src="./img/film_type_2.png" />
+                                        </div>
+                                        <div class="movies__label__bottom">
+                                            Suất Chiếu Sớm
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C18</span> Trái Tim Quái Vật (C18)
+                                        </div>
+                                        <p>89 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m6.png" />
+                                        <div class="movies__rate">
+                                            <h3>8.6</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                        <div class="movies__label">
+                                            <img src="./img/film_type_3.png" />
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C16</span> Sài Gòn Trong Cơn Mưa - Saigon In The Rain (C16)
+                                        </div>
+                                        <p>105 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m7.png" />
+                                        <div class="movies__rate">
+                                            <h3>6.1</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C16</span> Kỳ Nghỉ Nhớ Đời - Golden Holiday (C16)
+                                        </div>
+                                        <p>106 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m8.png" />
+                                        <div class="movies__rate">
+                                            <h3>5.6</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                        <div class="movies__label">
+                                            <img src="./img/film_type_3.png" />
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span class="spanGreen">P</span> Fate/Stay Night III: Heaven's Feel
+                                        </div>
+                                        <p>122 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- PAGE 2 -->
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m9.png" />
+                                        <div class="movies__rate">
+                                            <h3>6.4</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C16</span> Đừng Gọi Anh Là Bố - My God! Father (C16)
+                                        </div>
+                                        <p>104 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m10.png" />
+                                        <div class="movies__rate">
+                                            <h3>5.7</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                        <div class="movies__label">
+                                            <img src="./img/film_type_3.png" />
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C18</span> Kiếm Khách - The Swordsman (C18)
+                                        </div>
+                                        <p>100 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m11.png" />
+                                        <div class="movies__rate">
+                                            <h3>5.6</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                        <div class="movies__label">
+                                            <img src="./img/film_type_3.png" />
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C16</span> Hào Quang Đánh Cắp - Diva (C16)
+                                        </div>
+                                        <p>84 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m12.png" />
+                                        <div class="movies__rate">
+                                            <h3>5.7</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                        <div class="movies__label">
+                                            <img src="./img/film_type_3.png" />
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C16</span> Thanh Âm Trong Mắt Em - Your Eyes Tell (C16)
+                                        </div>
+                                        <p>123 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m13.png" />
+                                        <div class="movies__rate">
+                                            <h3>5.2</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C18</span> Ranh Giới Quỷ - The Other Side (C18)
+                                        </div>
+                                        <p>100 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m14.png" />
+                                        <div class="movies__rate">
+                                            <h3>5.5</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span class="spanGreen">P</span> Liên Quân Siêu Thú - Stardog and
+                                            Turbocat
+                                            (P)
+                                        </div>
+                                        <p>90 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m15.png" />
+                                        <div class="movies__rate">
+                                            <h3>6.2</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C18</span> Những Kẻ Vô Cảm - Don't Look Back (C18)
+                                        </div>
+                                        <p>90 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movies_item">
+                                    <div class="movies__item__img">
+                                        <img src="./img/m16.png" />
+                                        <div class="movies__rate">
+                                            <h3>6.2</h3>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <span>½</span>
+                                        </div>
+                                        <div class="movies__overlay">
+                                            <button>
+                                                <a class="video" title="Test title"
+                                                    href="https://www.youtube.com/watch?v=A6sapMOTZms">
+                                                    <img src="./img/play-video.png" />
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="movies__item__content">
+                                        <div class="movies__item__title">
+                                            <span>C18</span> Ngạ Quỷ: Tiếng Thét Đồng Gió Hú - The Ghoul: Horror At
+                                            The
+                                            Howling
+                                            Field (C18)
+                                        </div>
+                                        <p>112 phút</p>
+                                        <div class="movies__buy">
+                                            <a href="#">MUA VÉ</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="stickets">
+        <div class="stickets__container">
+            <div class="stickets__left">
+                <ul>
+                    <li onclick="renderCinema('BHD Star')" id="lb0">
+                        <img src="./img/s1.png" />
+                    </li>
+                    <li onclick="renderCinema('CNS')" id="lb1">
+                        <img src="./img/s2.png" />
+                    </li>
+                    <li onclick="renderCinema('DDC')" id="lb2">
+                        <img src="./img/s3.png" />
+                    </li>
+                    <li onclick="renderCinema('MegaGS')" id="lb3">
+                        <img src="./img/s4.png" />
+                    </li>
+                    <li onclick="renderCinema('DCine')" id="lb4">
+                        <img src="./img/s5.jpg" />
+                    </li>
+                    <li onclick="renderCinema('Lotte')" id="lb5">
+                        <img src="./img/s6.png" />
+                    </li>
+                </ul>
+            </div>
+            <div class="stickets__center"></div>
+            <div class="stickets__right"></div>
+        </div>
+    </section>
+    <section class="news">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-dien-anh-tab" data-toggle="tab" href="#nav-dien-anh"
+                    role="tab" aria-controls="nav-dien-anh" aria-selected="true">Điện Ảnh 24h</a>
+                <a class="nav-item nav-link" id="nav-review-tab" data-toggle="tab" href="#nav-dien-anh" role="tab"
+                    aria-controls="nav-review" aria-selected="true">Review</a>
+                <a class="nav-item nav-link" id="nav-khuyen-mai-tab" data-toggle="tab" href="#nav-dien-anh" role="tab"
+                    aria-controls="nav-khuyen-mai" aria-selected="true">Khuyến Mãi</a>
+            </div>
+        </nav>
+        <div class="tab-pane fade show active" id="nav-dien-anh" role="tabpanel" aria-labelledby="nav-dien-anh-tab">
+            <div class="news__container">
+                <div class="news__item item_big1">
+                    <img src="./img/news1.png" />
+                    <a href="#">
+                        <h3>Tiệc Trăng Máu chính thức cán mốc 100 tỷ chỉ sau 2 tuần công chiếu</h3>
+                    </a>
+                    <p>Sau 2 tuần ra mắt, Tiệc Trăng Máu chính thức gia nhập câu lạc bộ phim điện ảnh đạt 100 tỷ đồng
+                        doanh thu phòng vé. Dàn ngôi sao “bạc tỷ” của phim cũng lần đầu tiên hội tụ đầy đủ trong một
+                        khung hình để ăn mừng thành tích ấn tượng của tác phẩm.</p>
+                    <div class="news__info">
+                        <div><img src="./img/like.png" />1</div>
+                        <div><img src="./img/comment.png" />0</div>
+                    </div>
+                </div>
+                <div class="news__item item_big2">
+                    <img src="./img/news2.jpg" />
+                    <a href="#">
+                        <h3>Ngô Thanh Vân chính thức khởi động cuộc thi thiết kế trang phục cho siêu anh hùng</h3>
+                    </a>
+                    <p>Chiều tối ngày 30-10-2020, Ngô Thanh Vân và Studio68 đã chính thức phát động cuộc thi thiết kế
+                        trang phục cho siêu anh hùng VINAMAN với tổng giá trị giải thưởng lên đến 60 triệu đồng.</p>
+                    <div class="news__info">
+                        <div><img src="./img/like.png" />1</div>
+                        <div><img src="./img/comment.png" />0</div>
+                    </div>
+                </div>
+                <div class="news__item item_big3">
+                    <img src="./img/news3.png" />
+                    <a href="#">
+                        <h3>[ANTEBELLUM] - 4 lý do không thể bỏ lỡ siêu phẩm kinh dị Antebellum: Bẫy Thực Tại Kinh Hoàng
+                        </h3>
+                    </a>
+                    <p>Không đi theo lối mòn máu me, hù dọa mà đầu tư khai thác những mảng tối của xã hội trên nền một
+                        câu chuyện kinh dị, có sự tham gia của nhà sản xuất đã làm nên thành công của loạt tác phẩm ấn
+                        tượng “Get Out”, “Us” hay “BlacKkKlansman”, và còn nhiều lý do khác khiến người yêu phim không
+                        thể bỏ lỡ Ante</p>
+                    <div class="news__info">
+                        <div><img src="./img/like.png" />1</div>
+                        <div><img src="./img/comment.png" />0</div>
+                    </div>
+                </div>
+                <div class="news__item item_big4">
+                    <img src="./img/news4.png" />
+                    <a href="#">
+                        <h3>Truy Cùng Giết Tận - Cuộc tái ngộ của hai 'ông hoàng phòng vé' xứ Hàn</h3>
+                    </a>
+                    <p>Sau 7 năm kể từ New World – bộ phim đạt thành tích hơn 4.68 triệu vé, hai tên tuổi lão làng trong
+                        làng điện ảnh Hàn Quốc mới tiếp tục tái hợp trong Truy Cùng Giết Tận – một bộ phim hành động
+                        siêu “nặng đô”.</p>
+                    <div class="news__info">
+                        <div><img src="./img/like.png" />1</div>
+                        <div><img src="./img/comment.png" />0</div>
+                    </div>
+                </div>
+                <div class="news__item item_big5">
+                    <div class="news__child">
+                        <div class="child__thumb">
+                            <img src="./img/child1.png" />
+                        </div>
+                        <div class="child__title">
+                            <a href="#">Dàn mỹ nhân trong thế giới điện ảnh của quái kiệt Christopher Nolan</a>
+                        </div>
+                    </div>
+                    <div class="news__child">
+                        <div class="child__thumb">
+                            <img src="./img/child2.png" />
+                        </div>
+                        <div class="child__title">
+                            <a href="#">Truy Cùng Giết Tận - Cuộc tái ngộ của hai 'ông hoàng phòng vé' xứ Hàn</a>
+                        </div>
+                    </div>
+                    <div class="news__child">
+                        <div class="child__thumb">
+                            <img src="./img/child3.png" />
+                        </div>
+                        <div class="child__title">
+                            <a href="#">6 đạo diễn tỉ đô làm nên thành công của những bom tấn đình đám nhất
+                                Hollywood</a>
+                        </div>
+                    </div>
+                    <div class="news__child">
+                        <div class="child__thumb">
+                            <img src="./img/child4.png" />
+                        </div>
+                        <div class="child__title">
+                            <a href="#">Gái Già Lắm Chiêu V – Những cuộc đời vương giả</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news__btn">
+            <button>XEM THÊM</button>
+        </div>
+    </section>
+    <section class="app">
+        <div class="app__container">
+            <div class="app__left">
+                <h2>Ứng dụng tiện lợi dành cho<br />người yêu điện ảnh</h2>
+                <p class="app__left__content">Không chỉ đặt vé, bạn còn có thể bình luận phim, chấm điểm rạp và
+                    đổi
+                    quà hấp dẫn.</p>
+                <button class="app__left__btn">App miễn phí - Tải về ngay!</button>
+                <p class="app__left__version">TIX có hai phiên bản
+                    <a href="#">iOS</a>
+                    &amp;&nbsp;<a href="#">Android</a>
+                </p>
+            </div>
+            <div class="app__right">
+                <div class="app__slider__img">
+                    <img class="phone-img" src="./img/mobile.png" alt="Loading...">
+                </div>
+                <div class="app__slider__container">
+                    <div class="app__slider__item">
+                        <img src="./img/slide1.jpg" class="img-slider">
+                    </div>
+                    <div class="app__slider__item">
+                        <img src="./img/slide2.jpg" class="img-slider">
+                    </div>
+                    <div class="app__slider__item">
+                        <img src="./img/slide3.jpg" class="img-slider">
+                    </div>
+                    <div class="app__slider__item">
+                        <img src="./img/slide4.jpg" class="img-slider">
+                    </div>
+                    <div class="app__slider__item">
+                        <img src="./img/slide5.jpg" class="img-slider">
+                    </div>
+                    <div class="app__slider__item">
+                        <img src="./img/slide6.jpg" class="img-slider">
+                    </div>
+                    <div class="app__slider__item">
+                        <img src="./img/slide7.jpg" class="img-slider">
+                    </div>
+                    <div class="app__slider__item">
+                        <img src="./img/slide8.jpg" class="img-slider">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer__container">
+            <div class="row m-0 p-0 footer__top">
+                <div class="col-sm-4 col-xs-12">
+                    <p class="footer__title">TIX</p>
+                    <div class="row f_left">
+                        <div class="col-sm-6 col-xs-6 f_left_i_left">
+                            <a href="#">FAQ</a>
+                            <a href="#">Brand Guidelines</a>
+                        </div>
+                        <div class="col-sm-6 col-xs-12 f_left_i_right" ng-if="!isMobile">
+                            <a href="#">Thỏa thuận sử dụng</a>
+                            <a href="#">Chính sách bảo mật</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <p class="footer__title">ĐỐI TÁC</p>
+                    <div class="row col-sm-12 col-xs-12 footer__doitac">
+                        <a href="#"><img src="./img/d1.png" /></a>
+                        <a href="#"><img src="./img/d2.png" /></a>
+                        <a href="#"><img src="./img/d3.png" /></a>
+                        <a href="#"><img src="./img/d4.png" /></a>
+                        <a href="#"><img src="./img/d5.png" /></a>
+                        <a href="#"><img src="./img/d6.png" /></a>
+                        <a href="#"><img src="./img/d7.jpg" /></a>
+                        <a href="#"><img src="./img/d8.png" /></a>
+                        <a href="#"><img src="./img/d9.png" /></a>
+                        <a href="#"><img src="./img/d10.jpg" /></a>
+                        <a href="#"><img src="./img/d11.png" /></a>
+                        <a href="#"><img src="./img/d12.png" /></a>
+                        <a href="#"><img src="./img/d13.png" /></a>
+                        <a href="#"><img src="./img/d14.jpg" /></a>
+                        <a href="#"><img src="./img/d15.png" /></a>
+                        <a href="#"><img src="./img/d16.png" /></a>
+                        <a href="#"><img src="./img/d17.png" /></a>
+                        <a href="#"><img src="./img/d18.png" /></a>
+                        <a href="#"><img src="./img/d19.png" /></a>
+                        <a href="#"><img src="./img/d20.png" /></a>
+
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="row">
+                        <div class="col-6 text-center">
+                            <p class="footer__title">MOBILE APP</p>
+                            <a href="#"><img class="iconApp" src="./img/lg1.png" /></a>
+                            <a href="#"><img class="iconApp" src="./img/lg2.png" /></a>
+                        </div>
+                        <div class="col-6 text-center">
+                            <p class="footer__title">SOCIAL</p>
+                            <a href="#"><img class="iconApp" src="./img/lg3.png" /></a>
+                            <a href="#"><img class="iconApp" src="./img/lg4.png" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-0 p-0 px-2">
+                <div class="col-sm-12 col-md-1 col-lg-1 text-center footer__left">
+                    <img src="./img/zion-logo.jpg" class="imglogo" />
+                </div>
+                <div class="col-sm-12 col-md-9 col-lg-9 footer__center">
+                    <h3>TIX – SẢN PHẨM CỦA CÔNG TY CỔ PHẦN ZION</h3>
+                    <div>Địa chỉ: Z06 Đường số 13, Phường Tân Thuận Đông, Quận 7, Tp. Hồ Chí Minh, Việt Nam.</div>
+                    <div>Giấy chứng nhận đăng ký kinh doanh số: 0101659783,</div>
+                    <div>đăng ký thay đổi lần thứ 30, ngày 22 tháng 01 năm 2020 do Sở kế hoạch và đầu tư Thành phố
+                        Hồ Chí Minh cấp.</div>
+                    <div>Số Điện Thoại (Hotline): 1900 545 436</div>
+                    <div>Email: <a href="mailto:support@tix.vn" style="color: #FB4226;">support@tix.vn</a></div>
+                </div>
+                <div class="col-sm-12 col-md-2 col-lg-2 footer__right">
+                    <a href="#">
+                        <img class="imgCheck" src="./img/check.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+    <script src="./js/jquery.magnific-popup.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/slidebar.js"></script>
+</body>
+
+</html>
